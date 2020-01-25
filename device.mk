@@ -24,7 +24,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    lineage.biometrics.fingerprint.inscreen@1.0-service.realme_xt
+    lineage.biometrics.fingerprint.inscreen@1.1-service.realme_xt
 
 PRODUCT_COPY_FILES += \
     vendor/lineage/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:system/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
