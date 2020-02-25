@@ -9,9 +9,6 @@ BUILD_BROKEN_DUP_RULES := true
 
 DEVICE_PATH := device/realme/RMX1921
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a
