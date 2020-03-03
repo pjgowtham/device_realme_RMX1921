@@ -176,13 +176,13 @@ PRODUCT_PACKAGES += \
     RealmeParts
 
 # Fingerprint
-PRODUCT_PACKAGES += \
-    vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.realme_sdm710 \
-    vendor.oppo.hardware.biometrics.fingerprint@2.1 \
-    android.hardware.biometrics.fingerprint@2.1-service.realme_sdm710
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.realme_sdm710 \
+#    vendor.oppo.hardware.biometrics.fingerprint@2.1 \
+#    android.hardware.biometrics.fingerprint@2.1-service.realme_sdm710
 	
-PRODUCT_COPY_FILES += \
-    vendor/lineage/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+#PRODUCT_COPY_FILES += \
+#   vendor/lineage/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 
 # GPS
 PRODUCT_COPY_FILES += \
