@@ -9,6 +9,8 @@ BUILD_BROKEN_DUP_RULES := true
 
 DEVICE_PATH := device/realme/RMX1921
 
+#PRODUCT_SOONG_NAMESPACES += hardware/qcom/sdm845
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a
