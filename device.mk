@@ -355,7 +355,11 @@ PRODUCT_PACKAGES += \
 # QTI
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml \
-    $(LOCAL_PATH)/permissions/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml
+    $(LOCAL_PATH)/permissions/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml \
+    $(LOCAL_PATH)/permissions/qti_fingerprint_interface.xml:system/etc/permissions/qti_fingerprint_interface.xml \
+    $(LOCAL_PATH)/permissions/vendor-oppo-engnative-engineer.xml:system/etc/permissions/vendor-oppo-engnative-engineer.xml \
+    $(LOCAL_PATH)/permissions/vendor-oppo-hardware.biometrics.fingerprintpay.xml:system/etc/permissions/vendor-oppo-hardware.biometrics.fingerprintpay.xml \
+    $(LOCAL_PATH)/permissions/vendor-qti-hardware-sensorscalibrate.xml:system/etc/permissions/vendor-qti-hardware-sensorscalibrate.xml 
 
 # RCS
 PRODUCT_PACKAGES += \
