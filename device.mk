@@ -82,6 +82,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths_wcd9340.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths_wcd9340.xml \
     $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml \
     $(LOCAL_PATH)/audio/mixer_paths_19651.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_19651.xml
+
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
@@ -113,8 +114,10 @@ PRODUCT_PACKAGES += \
     init.crda.sh \
     init.mdm.sh \
     init.oppo.face.sh \
+    init.oppo.face_calib.sh \
     init.oppo.fingerprints.sh \
     init.oppo.wifi.sh \
+    init.oppo.wifiAutoRecovery.sh \
     init.qcom.class_core.sh \
     init.qcom.coex.sh \
     init.qcom.crashdata.sh \
@@ -124,14 +127,19 @@ PRODUCT_PACKAGES += \
     init.qcom.sdio.sh \
     init.qcom.sensors.sh \
     init.qcom.sh \
+    init.qti.chg_policy.sh \
     init.qcom.usb.sh \
     init.qti.fm.sh \
     init.qti.ims.sh \
     fstab.qcom \
     init.msm.usb.configfs.rc \
     init.oppo.debug.diag.rc \
+    init.oppo.rc \
+    init.oppo.fingerprints.rc \
     init.oppo.reserve.rc \
     init.oppo.sensor.rc \
+    init.oppo.rootdir.rc \
+    init.oppo.seccommon.rc \
     init.qcom.factory.rc \
     init.qcom.rc \
     init.qcom.usb.rc \

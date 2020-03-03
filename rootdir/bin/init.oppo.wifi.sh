@@ -57,8 +57,8 @@ else
     persist_version=0
 fi
 #add for differentiate sdm670 and sdm710
-prj_version=`cat /proc/oppoVersion/prjVersion`
-if [ "x${prj_version}" == "x18181" -o "x${prj_version}" == "x18182" -o "x${prj_version}" == "x18385" -o "x${prj_version}" == "x18386" -o "x${prj_version}" == "x18097" -o "x${prj_version}" == "x18041" -o "x${prj_version}" == "x18383" ];then
+prj_version=`cat /proc/oppoVersion/prjName`
+if [ "x${prj_version}" == "x18181" -o "x${prj_version}" == "x18182" -o "x${prj_version}" == "x18385" -o "x${prj_version}" == "x18386" -o "x${prj_version}" == "x18097" -o "x${prj_version}" == "x18041" -o "x${prj_version}" == "x18383" -o "x${prj_version}" == "x18621" -o "x${prj_version}" == "x19691" -o "x${prj_version}" == "x19651" ];then
 	echo "prj_version=${prj_version} is sdm710 project"
 	isSdm710_Project=1
 else
@@ -68,7 +68,7 @@ fi
 # add end
 
 if [ ! -s /mnt/vendor/persist/bdwlan.bin -o $system_version -gt $persist_version ]; then
-    prj_version=`cat /proc/oppoVersion/prjVersion`
+    prj_version=`cat /proc/oppoVersion/prjName`
 	Modem_version=`cat /proc/oppoVersion/modemType`
 	operatorName=`cat /proc/oppoVersion/operatorName`
 	echo "#1prj_version=${prj_version}"
@@ -139,7 +139,7 @@ if [ ! -s /mnt/vendor/persist/bdwlan.bin -o $system_version -gt $persist_version
 				 "8" | "2" )
 				    cp /vendor/etc/wifi/bdwlan_18041_id1.bin /mnt/vendor/persist/bdwlan_18041_id1.bin
 				    ;;
-				 "5" | "32" )
+				 "5"| "32")
 				     cp /vendor/etc/wifi/bdwlan_18539.bin /mnt/vendor/persist/bdwlan_18539.bin
 					;;
 			esac
@@ -190,7 +190,7 @@ fi
 
 #Qiulei@PSW.CN.Wifi.Hardware.1065227, 2017/03/06,
 #Add for : bin for according project
-prj_version=`cat /proc/oppoVersion/prjVersion`
+prj_version=`cat /proc/oppoVersion/prjName`
 Modem_version=`cat /proc/oppoVersion/modemType`
 operatorName=`cat /proc/oppoVersion/operatorName`
 echo "#2prj_version=${prj_version}"
@@ -261,7 +261,7 @@ if [ "x${isSdm710_Project}" == "x1" ]; then
 				 "8" | "2" )
 				    cp /mnt/vendor/persist/bdwlan_18041_id1.bin /mnt/vendor/persist/bdwlan.bin
 				    ;;
-				 "5" | "32" )
+				 "5" | "32")
 				     cp /mnt/vendor/persist/bdwlan_18539.bin /mnt/vendor/persist/bdwlan.bin
 					 ;;
 			esac
@@ -308,13 +308,305 @@ if [ "x${isSdm710_Project}" == "x1" ]; then
 	esac
 fi
 
+
+
+
+
+
+
+
+
+#liushupei@RM.CN.Wifi.Hardware, 2018/11/29,
+#Add for make bin Rom-update for Realme.
+if [ -s /vendor/etc/wifi/bin_version_realme ]; then
+    system_version=`cat /vendor/etc/wifi/bin_version_realme`
+else
+    system_version=1
+fi
+if [ -s /mnt/vendor/persist/bin_version_realme ]; then
+    persist_version=`cat /mnt/vendor/persist/bin_version_realme`
+else
+    persist_version=0
+fi
+
+prj_version=`cat /proc/oppoVersion/prjName`
+
+if [ ! -s /mnt/vendor/persist/bdwlan.bin -o $system_version -gt $persist_version ]; then
+	prj_version=`cat /proc/oppoVersion/prjName`
+	Modem_version=`cat /proc/oppoVersion/modemType`
+	operatorName=`cat /proc/oppoVersion/operatorName`
+	pcbVersion=`cat /proc/oppoVersion/pcbVersion`
+	echo "#RM1 prj_version=${prj_version}"
+	echo "#RM1 Modem_version=${Modem_version}"
+	echo "#RM1 operatorName=${operatorName}"
+	echo "#RM1 pcbVersion=${pcbVersion}"
+	#add for 710
+	echo "#1enter sdm710 project"
+	case $prj_version in 
+		"18621")
+		case $operatorName in
+			"2" | "8" | "30" | "31" | "32" | "33")
+			 ##18638 18637 18623 18621 18625 18627
+				case $pcbVersion in
+					"0" | "1" | "2" | "3" | "4" |"5")
+						cp /vendor/etc/wifi/bdwlan_18621.bin /mnt/vendor/persist/bdwlan_18621.bin
+					;;
+					*)
+						cp /vendor/etc/wifi/bdwlan_18621_mp.bin /mnt/vendor/persist/bdwlan_18621_mp.bin
+					;;
+				esac
+				;;
+			 "34")
+			 ##18633
+				case $pcbVersion in
+					"0" | "1" | "2" | "3" | "4" | "5")
+						cp /vendor/etc/wifi/bdwlan_18633.bin /mnt/vendor/persist/bdwlan_18633.bin
+					;;
+					*)
+						cp /vendor/etc/wifi/bdwlan_18633_mp.bin /mnt/vendor/persist/bdwlan_18633_mp.bin
+					;;
+				esac
+				;;
+		esac
+		;;
+		"19691")
+			case $operatorName in
+				"30" | "32")
+				##19691 19693
+					cp /vendor/etc/wifi/bdwlan_19691.bin /mnt/vendor/persist/bdwlan_19691.bin
+					;;
+				"5")
+				##19692
+					cp /vendor/etc/wifi/bdwlan_19692.bin /mnt/vendor/persist/bdwlan_19692.bin
+					;;
+				"8")
+				##19791
+					cp /vendor/etc/wifi/bdwlan_19791.bin /mnt/vendor/persist/bdwlan_19791.bin
+					;;
+			esac
+			;;
+		"19651")
+			case $operatorName in
+				"5" | "8" | "31" | "32" | "34")
+				##19652 19755 19651 19656 19655
+					cp /vendor/etc/wifi/bdwlan_19651.bin /mnt/vendor/persist/bdwlan_19651.bin
+					;;
+				"11")
+				##19653
+					cp /vendor/etc/wifi/bdwlan_19653.bin /mnt/vendor/persist/bdwlan_19653.bin
+					;;
+			esac
+		;;
+	esac
+	echo "$system_version" > /mnt/vendor/persist/bin_version_realme
+fi
+# endof ! -s /mnt/vendor/persist/bdwlan.bin -o $system_version -gt $persist_version  
+
+#liushupei@RM.CN.Wifi.Hardware, 2019/08/07,
+#we need force replace the bdwlan.bin in persist in case the bdf is damaged
+prj_version=`cat /proc/oppoVersion/prjName`
+Modem_version=`cat /proc/oppoVersion/modemType`
+operatorName=`cat /proc/oppoVersion/operatorName`
+pcbVersion=`cat /proc/oppoVersion/pcbVersion`
+case $prj_version in
+	"18621")
+		case $operatorName in
+			"2" | "8" | "30" | "31" | "32" | "33")
+			##18638 18637 18623 18621 18625 18627
+				case $pcbVersion in
+					"0" | "1" | "2" | "3" | "4" |"5")
+						if [ ! -s /mnt/vendor/persist/bdwlan_18621.bin ]; then
+							cp /vendor/etc/wifi/bdwlan_18621.bin /mnt/vendor/persist/bdwlan.bin
+						else
+							cp /mnt/vendor/persist/bdwlan_18621.bin /mnt/vendor/persist/bdwlan.bin
+						fi
+					;;
+					*)
+						if [ ! -s /mnt/vendor/persist/bdwlan_18621_mp.bin ]; then
+							cp /vendor/etc/wifi/bdwlan_18621_mp.bin /mnt/vendor/persist/bdwlan.bin
+						else
+							cp /mnt/vendor/persist/bdwlan_18621_mp.bin /mnt/vendor/persist/bdwlan.bin
+						fi
+					;;
+				esac
+				;;
+			"34")
+			##18633
+				case $pcbVersion in
+					"0" | "1" | "2" | "3" | "4" | "5")
+						if [ ! -s /mnt/vendor/persist/bdwlan_18633.bin ]; then
+							cp /vendor/etc/wifi/bdwlan_18633.bin /mnt/vendor/persist/bdwlan.bin
+						else
+							cp /mnt/vendor/persist/bdwlan_18633.bin /mnt/vendor/persist/bdwlan.bin
+						fi
+					;;
+					*)
+						if [ ! -s /mnt/vendor/persist/bdwlan_18633_mp.bin ]; then
+							cp /vendor/etc/wifi/bdwlan_18633_mp.bin /mnt/vendor/persist/bdwlan.bin
+						else
+							cp /mnt/vendor/persist/bdwlan_18633_mp.bin /mnt/vendor/persist/bdwlan.bin
+						fi
+					;;
+				esac
+				;;
+		esac
+		;;
+	"19691")
+	##19691 19791 19692 19693
+		case $operatorName in
+			"30" | "32")
+			##19691
+				if [ ! -s /mnt/vendor/persist/bdwlan_19691.bin ]; then
+					cp /vendor/etc/wifi/bdwlan_19691.bin /mnt/vendor/persist/bdwlan.bin
+				else
+					cp /mnt/vendor/persist/bdwlan_19691.bin /mnt/vendor/persist/bdwlan.bin
+				fi
+				;;
+			"5")
+			##19692
+				if [ ! -s /mnt/vendor/persist/bdwlan_19692.bin ]; then
+					cp /vendor/etc/wifi/bdwlan_19692.bin /mnt/vendor/persist/bdwlan.bin
+				else
+					cp /mnt/vendor/persist/bdwlan_19692.bin /mnt/vendor/persist/bdwlan.bin
+				fi
+				;;
+			"8")
+			##19791
+				if [ ! -s /mnt/vendor/persist/bdwlan_19791.bin ]; then
+					cp /vendor/etc/wifi/bdwlan_19791.bin /mnt/vendor/persist/bdwlan.bin
+				else
+					cp /mnt/vendor/persist/bdwlan_19791.bin /mnt/vendor/persist/bdwlan.bin
+				fi
+				;;
+		esac
+		;;
+	"19651")
+		case $operatorName in
+			"5" | "8" | "31" | "32" | "34")
+			##19652
+				if [ ! -s /mnt/vendor/persist/bdwlan_19651.bin ]; then
+					cp /vendor/etc/wifi/bdwlan_19651.bin /mnt/vendor/persist/bdwlan.bin
+				else
+					cp /mnt/vendor/persist/bdwlan_19651.bin /mnt/vendor/persist/bdwlan.bin
+				fi
+				;;
+			"11")
+			##19653
+				if [ ! -s /mnt/vendor/persist/bdwlan_19653.bin ]; then
+					cp /vendor/etc/wifi/bdwlan_19653.bin /mnt/vendor/persist/bdwlan.bin
+				else
+					cp /mnt/vendor/persist/bdwlan_19653.bin /mnt/vendor/persist/bdwlan.bin
+				fi
+				;;
+		esac
+	;;
+esac
+
+
+
+
+
+
+
+
 chmod 666 /mnt/vendor/persist/bdwlan.bin
 chown system:wifi /mnt/vendor/persist/bdwlan.bin
-
 #Yuan.Huang@PSW.CN.Wifi.Network.internet.1074197, 2016/11/09,
 #Add for make WCNSS_qcom_cfg.ini Rom-update.
-if [ -s /vendor/etc/wifi/WCNSS_qcom_cfg.ini ]; then
-	system_version=`head -1 /vendor/etc/wifi/WCNSS_qcom_cfg.ini | grep OppoVersion | cut -d= -f2`
+engVersion=`cat /proc/oppoVersion/engVersion`
+echo "#RM1 engVersion=${engVersion}"
+if [ "x${prj_version}" == "x18621" -o "x${prj_version}" == "x19691" -o "x${prj_version}" == "x19651" ];then
+	echo "${prj_version} wifitype is 3980"
+	WifiType=3980
+else
+	echo "${prj_version} wifitype is 3990"
+	WifiType=3990
+fi
+
+case $prj_version in 
+	"18621")
+	case $operatorName in
+		"34" | "30" | "31" | "32" | "33")
+		 ##18633 18623 18621 18625 18627
+			product_cn=0
+			;;
+		 "8" | "2")
+		 ##18637 18638
+			product_cn=1
+			;;
+	esac
+	;;
+	"19691")
+		case $operatorName in
+			"30" | "5" | "32")
+			##19691 19692 19693
+				product_cn=0
+				;;
+			"8")
+			##19791
+				product_cn=1
+				;;
+		esac
+		;;
+	"19651")
+		case $operatorName in
+			"5" | "11" | "31" | "32" | "34")
+			##19652 19653 19651 19656 19655
+				product_cn=0
+				;;
+			"8")
+			##19755
+				product_cn=1
+				;;
+		esac
+	;;
+	"18041")
+		case $operatorName in
+			"5" | "32")
+			##19605 19609
+				product_cn=0
+				;;
+			"8")
+			##19601
+				product_cn=1
+				;;
+		esac
+	;;
+esac
+
+
+
+
+if [ "x${WifiType}" == "x3980" ];then
+	#wifitype is 3980
+	echo "#RM1 chipType is 3980 "
+	if [ "x${product_cn}" == "x1" ]; then
+		#CN
+		WifiConfigureSRCFile=/vendor/etc/wifi/3980/WCNSS_qcom_cfg.ini
+		if [ "x${engVersion}" == "x2" ]; then
+		#CTA engVersion ==2
+			WifiConfigureSRCFile=/vendor/etc/wifi/3980/WCNSS_qcom_cfg_cmcc.ini
+		fi
+	else
+		WifiConfigureSRCFile=/vendor/etc/wifi/3980/WCNSS_qcom_cfg_export.ini
+	fi
+else
+	#wifitype is 3990
+	echo "#RM1 chipType is 3990 "
+	if [ "x${product_cn}" == "x1" ]; then
+		#CN
+		WifiConfigureSRCFile=/vendor/etc/wifi/WCNSS_qcom_cfg.ini
+		if [ "x${engVersion}" == "x2" ]; then
+		#CTA engVersion ==2
+			WifiConfigureSRCFile=/vendor/etc/wifi/WCNSS_qcom_cfg_cmcc.ini
+		fi
+	else
+		WifiConfigureSRCFile=/vendor/etc/wifi/WCNSS_qcom_cfg_export.ini
+	fi
+fi
+
+if [ -s "${WifiConfigureSRCFile}" ]; then
+	system_version=`head -1 ${WifiConfigureSRCFile} | grep OppoVersion | cut -d= -f2`
 	if [ "${system_version}x" = "x" ]; then
 		system_version=1
 	fi
@@ -338,10 +630,10 @@ else
 fi
 
 if [ ! -s /mnt/vendor/persist/WCNSS_qcom_cfg.ini -o $system_version -gt $persist_version ]; then
-    cp /vendor/etc/wifi/WCNSS_qcom_cfg.ini \
-            /mnt/vendor/persist/WCNSS_qcom_cfg.ini
-    chown system:wifi /mnt/vendor/persist/WCNSS_qcom_cfg.ini
-    chmod 666 /mnt/vendor/persist/WCNSS_qcom_cfg.ini
+	cp "${WifiConfigureSRCFile}" \
+			/mnt/vendor/persist/WCNSS_qcom_cfg.ini
+	chown system:wifi /mnt/vendor/persist/WCNSS_qcom_cfg.ini
+	chmod 666 /mnt/vendor/persist/WCNSS_qcom_cfg.ini
 fi
 
 #else /* VENDOR_EDIT */
