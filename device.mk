@@ -109,7 +109,6 @@ PRODUCT_PACKAGES += \
 
 # Common init scripts
 PRODUCT_PACKAGES += \
-    init.class_late.sh \
     init.class_main.sh \
     init.crda.sh \
     init.mdm.sh \
@@ -126,24 +125,17 @@ PRODUCT_PACKAGES += \
     init.qcom.sensors.sh \
     init.qcom.sh \
     init.qcom.usb.sh \
-    init.qti.can.sh \
     init.qti.fm.sh \
     init.qti.ims.sh \
-    init.qti.manifest_sku.sh \
-    init.qti.qseecomd.sh \
     fstab.qcom \
     init.msm.usb.configfs.rc \
     init.oppo.debug.diag.rc \
     init.oppo.reserve.rc \
     init.oppo.sensor.rc \
-    init.oppo.vendor.fingerprint.rc \
-    init.oppo.vendor.motor.rc \
     init.qcom.factory.rc \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.target.rc \
-    init.wlan.qcom.rc \
-    init.wlan.target.rc \
     ueventd.rc
 
 # Display
@@ -462,6 +454,7 @@ PRODUCT_COPY_FILES += \
 # WiFi Display
 PRODUCT_PACKAGES += \
     libnl
+    libnl \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
