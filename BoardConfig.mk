@@ -5,6 +5,9 @@ BOARD_VENDOR := realme
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 TARGET_OTA_ASSERT_DEVICE := RMX1921
 
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
+
 # Security patch level
 VENDOR_SECURITY_PATCH := 2020-02-05
 
