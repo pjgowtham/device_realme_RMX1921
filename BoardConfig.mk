@@ -66,8 +66,27 @@ TARGET_USES_QTI_CAMERA_DEVICE := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
+# Dex
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    WITH_DEXPREOPT ?= true
+  endif
+endif
+WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= true
+
+# DRM
+TARGET_ENABLE_MEDIADRM_64 := true
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
+
+# Graphics
+TARGET_USES_GRALLOC1 := true
+TARGET_USES_HWC2 := true
+TARGET_USES_ION := true
+
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2020-02-05
@@ -84,4 +103,16 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/framework_compatibi
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
+# RenderScript
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
+# RIL
+ENABLE_VENDOR_RIL_SERVICE := true
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+
+# Sepolicy
+include device/qcom/sepolicy/sepolicy.mk
+
+# Inherit from the proprietary version
 -include vendor/realme/RMX1921/BoardConfigVendor.mk
+
