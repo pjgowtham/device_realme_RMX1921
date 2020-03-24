@@ -182,6 +182,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     dalvik.vm.heapstartsize=16m \
     dalvik.vm.heaptargetutilization=0.75 \
 
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.use_color_management=true \
     ro.surface_flinger.wcg_composition_dataspace=143261696
