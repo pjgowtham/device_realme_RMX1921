@@ -178,3 +178,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     vendor.power.pasr.enabled=true \
     vendor.qcom.bluetooth.soc=cherokee \
     vendor.voice.path.for.pcm.voip=true \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.use_color_management=true \
+    ro.surface_flinger.wcg_composition_dataspace=143261696
