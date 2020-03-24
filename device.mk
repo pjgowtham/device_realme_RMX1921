@@ -183,12 +183,31 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml \
     $(LOCAL_PATH)/configs/audio/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
 
-#Camera
+# Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     snap \
     vendor.qti.hardware.camera.device@1.0.vendor
+
+# Display
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.3-service \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.graphics.mapper@2.0-impl-qti-display \
+    gralloc.sdm710 \
+    hwcomposer.sdm710 \
+    libdisplayconfig \
+    libhwc2on1adapter \
+    libhwc2onfbadapter \
+    libqdMetaData.system \
+    libtinyxml \
+    libvulkan \
+    memtrack.sdm710 \
+    vendor.display.config@1.7 \
+    vendor.qti.hardware.display.allocator@1.0-service \
+    libgui_vendor
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
