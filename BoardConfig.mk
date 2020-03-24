@@ -39,6 +39,7 @@ ifeq ($(TARGET_PREBUILT_KERNEL),)
   TARGET_KERNEL_SOURCE := kernel/realme/RMX1921
 endif
 TARGET_KERNEL_CONFIG := RMX1921_defconfig
+
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := sdm710
@@ -102,9 +103,8 @@ TARGET_USES_ION := true
 
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
-
-# Security patch level
-VENDOR_SECURITY_PATCH := 2020-02-05
+TARGET_HAS_WIDE_COLOR_DISPLAY := true
+TARGET_HAS_HDR_DISPLAY := true
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
@@ -143,10 +143,13 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 ENABLE_VENDOR_RIL_SERVICE := true
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
+# Security patch level
+VENDOR_SECURITY_PATCH := 2020-02-05
+
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
 
-#WLAN
+# WLAN
 WLAN_CHIPSET := qca_cld3
 BOARD_HAS_QCOM_WLAN := true
 WIFI_DRIVER_STATE_CTRL_PARAM := "/dev/wlan"
@@ -159,4 +162,3 @@ QC_WIFI_HIDL_FEATURE_DUAL_AP := true
 
 # Inherit from the proprietary version
 -include vendor/realme/RMX1921/BoardConfigVendor.mk
-
