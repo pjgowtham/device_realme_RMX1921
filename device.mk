@@ -120,11 +120,13 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.0-core \
     android.hardware.audio.common@5.0 \
     android.hardware.audio.common@5.0-util \
+    audio.primary.sdm710 \
+    audio.primary.default \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
-    audio.primary.sdm710 \
-    audio.primary.default \
+    libaudio-resampler \
+    libaudioroute \
     libqcomvisualizer \
     libqcompostprocbundle \
     libqcomvoiceprocessing \
