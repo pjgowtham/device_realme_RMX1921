@@ -5,12 +5,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     audio.offload.video=true \
     audio.sys.noisy.broadcast.delay=600 \
     audio.sys.offload.pstimeout.secs=3 \
-    dalvik.vm.heapgrowthlimit=384m \
-    dalvik.vm.heapmaxfree=8m \
-    dalvik.vm.heapminfree=512k \
-    dalvik.vm.heapsize=512m \
-    dalvik.vm.heapstartsize=16m \
-    dalvik.vm.heaptargetutilization=0.75 \
     debug.egl.hw=0 \
     debug.sf.hw=0 \
     debug.stagefright.omx_default_rank.sw-audio=1 \
@@ -178,6 +172,15 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     vendor.power.pasr.enabled=true \
     vendor.qcom.bluetooth.soc=cherokee \
     vendor.voice.path.for.pcm.voip=true \
+
+#Dalvik vm heap config
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    dalvik.vm.heapgrowthlimit=384m \
+    dalvik.vm.heapmaxfree=8m \
+    dalvik.vm.heapminfree=512k \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heapstartsize=16m \
+    dalvik.vm.heaptargetutilization=0.75 \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.use_color_management=true \
