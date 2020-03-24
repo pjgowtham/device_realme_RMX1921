@@ -1,6 +1,10 @@
 DEVICE_PATH := device/realme/RMX1921
 BOARD_VENDOR := realme
 
+# Assert
+TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
+TARGET_OTA_ASSERT_DEVICE := RMX1921
+
 # Security patch level
 VENDOR_SECURITY_PATCH := 2020-02-05
 
