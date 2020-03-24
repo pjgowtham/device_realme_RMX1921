@@ -113,6 +113,17 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
 
+#WLAN
+WLAN_CHIPSET := qca_cld3
+BOARD_HAS_QCOM_WLAN := true
+WIFI_DRIVER_STATE_CTRL_PARAM := "/dev/wlan"
+WIFI_DRIVER_STATE_ON := "ON"
+WIFI_DRIVER_STATE_OFF := "OFF"
+WIFI_HIDL_FEATURE_AWARE := true
+TARGET_USES_AOSP_FOR_WLAN := false
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+QC_WIFI_HIDL_FEATURE_DUAL_AP := true
+
 # Inherit from the proprietary version
 -include vendor/realme/RMX1921/BoardConfigVendor.mk
 
