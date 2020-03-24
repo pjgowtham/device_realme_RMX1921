@@ -21,6 +21,7 @@
 #include <android-base/logging.h>
 #include <fstream>
 #include <cmath>
+#include <thread>
 
 /* Define FOD size and location */
 #define FOD_SIZE 196
@@ -64,7 +65,7 @@ namespace inscreen {
 namespace V1_0 {
 namespace implementation {
 
-FingerprintInscreen::FingerprintInscreen() {
+FingerprintInscreen::FingerprintInscreen():mFingerPressed{false} {
 }
 
 Return<int32_t> FingerprintInscreen::getPositionX() {
@@ -88,13 +89,20 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 }
 
 Return<void> FingerprintInscreen::onPress() {
+    mFingerPressed = true;
     set(DIM_HBM, 1);
     set(HIGH_BRIGHTNESS, 1);
-    set(FOD_PRESS, 1);
+    std::thread([this]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(69));
+        if (mFingerPressed) {
+            set(FOD_PRESS, 1);
+        }
+    }).detach();
     return Void();
 }
 
 Return<void> FingerprintInscreen::onRelease() {
+    mFingerPressed = false;
     set(FOD_PRESS, 0);
     set(DIM_HBM, 0);
     set(HIGH_BRIGHTNESS, 0);
@@ -123,8 +131,9 @@ Return<void> FingerprintInscreen::setLongPressEnabled(bool) {
     return Void();
 }
 
-Return<int32_t> FingerprintInscreen::getDimAmount(int32_t) {
-  return 0;
+Return<int32_t> FingerprintInscreen::getDimAmount(int32_t brightness) {
+    return(int32_t)((brightness > 498) ? (255 * (1.0 - pow(brightness / 2047.0 * 430.0 / 600.0, 0.455))):
+            (255 * (1.0 - pow(brightness / 1605.0, 0.455)))); 
 }
 
 Return<bool> FingerprintInscreen::shouldBoostBrightness() {
