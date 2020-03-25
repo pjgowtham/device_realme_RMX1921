@@ -106,7 +106,8 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Properties
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
--include $(LOCAL_PATH)/vendor_prop.mk
+TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
+-include $(DEVICE_PATH)/vendor_prop.mk
 
 # AID/fs configs
 PRODUCT_PACKAGES += \
