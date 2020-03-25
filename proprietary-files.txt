@@ -1095,8 +1095,6 @@ vendor/firmware/ufs/SAMSUNG-KM8B8001JM-BC01.bin
 vendor/firmware/ufs/SKhynix-H9HQ16AECMMDAR.bin
 vendor/firmware/ufs/SKhynix-H9HQ53ACPMMDAR.bin
 vendor/firmware/ufs/SKhynix-H9HQ53AECMMDAR.bin
-vendor/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
-vendor/firmware/wlan/qca_cld/wlan_mac.bin
 
 # GPS
 etc/permissions/com.qti.location.sdk.xml
@@ -1447,7 +1445,6 @@ vendor/etc/libese-nxp.conf
 vendor/etc/libnfc-nci.conf
 vendor/etc/libnfc-nxp-pnscr.conf
 vendor/etc/nfc/com.oppo.nfc_feature.xml
-vendor/etc/permissions/com.oppo.nfc_feature.xml
 vendor/etc/sn100u_nfcon.pnscr
 vendor/lib/ese_spi_nxp.so
 vendor/lib/hal_libnfc.so
@@ -2176,7 +2173,6 @@ lib64/libwfduibcsink.so
 lib64/libwfduibcsinkinterface.so
 lib64/libwfduibcsrc.so
 lib64/libwfduibcsrcinterface.so
--priv-app/WfdService/lib/arm64/libwfdnative.so
 -priv-app/WfdService/WfdService.apk
 vendor/bin/wifidisplayhalservice
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
@@ -2226,17 +2222,11 @@ vendor/recovery-from-boot.p
 
 # Misc
 -vendor/app/CACertService/CACertService.apk
-vendor/app/QDMA-UI/lib/arm64/libvndfwk_detect_jni.qti.so
-vendor/app/QDMA/lib/arm64/libvndfwk_detect_jni.qti.so
-vendor/app/RfToolkit/lib/arm64/liboddi.so
-vendor/app/RfToolkit/lib/arm64/librftoolkit.so
 -vendor/app/RfToolkit/RfToolkit.apk
 vendor/bin/adpl
 vendor/bin/athdiag
-vendor/bin/bc
 vendor/bin/climax
 vendor/bin/cplay
-vendor/bin/devmem
 vendor/bin/diag_callback_sample
 vendor/bin/diag_dci_sample
 vendor/bin/diag_klog
@@ -2248,30 +2238,18 @@ vendor/bin/factory
 vendor/bin/fmconfig
 vendor/bin/fmfactorytest
 vendor/bin/fmfactorytestserver
-vendor/bin/fsync
 vendor/bin/ftmdaemon
 vendor/bin/ftmtest
-vendor/bin/getconf
 vendor/bin/hal_proxy_daemon
 vendor/bin/hw/android.hardware.atrace@1.0-service
 vendor/bin/hw/capabilityconfigstoretest
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
 vendor/bin/hw/vendor.qti.hardware.cryptfshw@1.0-service-qti
 vendor/bin/hw/vendor_transfer
-vendor/bin/i2cdetect
-vendor/bin/i2cdump
-vendor/bin/i2cget
-vendor/bin/i2cset
-vendor/bin/iconv
-vendor/bin/install
 vendor/bin/ipacm-diag
 vendor/bin/KmInstallKeybox
 vendor/bin/loadalgo
 vendor/bin/myftm
-vendor/bin/nc
-vendor/bin/netcat
-vendor/bin/nproc
-vendor/bin/nsenter
 vendor/bin/pcba_diag
 vendor/bin/pktlogconf
 vendor/bin/PktRspTest
@@ -2285,12 +2263,8 @@ vendor/bin/self-init
 vendor/bin/sigma_dut
 vendor/bin/spectraltool
 vendor/bin/test_diag
-vendor/bin/unlink
-vendor/bin/unshare
-vendor/bin/uuidgen
 vendor/bin/vendor_cmd_tool
 vendor/bin/vppservice
-vendor/bin/watch
 vendor/bin/wdsdaemon
 vendor/bin/wifilearner
 vendor/bin/wigighalsvc
