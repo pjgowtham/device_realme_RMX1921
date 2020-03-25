@@ -223,6 +223,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.2-service.widevine \
     android.hardware.drm@1.2-service.clearkey
 
+# IFAA manager
+PRODUCT_PACKAGES += \
+    org.ifaa.android.manager
+
 # Public Libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
