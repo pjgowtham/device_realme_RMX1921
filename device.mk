@@ -104,6 +104,7 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Properties
+PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 -include $(LOCAL_PATH)/vendor_prop.mk
 
