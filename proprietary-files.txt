@@ -1416,7 +1416,7 @@ vendor/lib/libOmxSwVdec.so
 vendor/lib/libOmxSwVencMpeg4.so
 vendor/lib/libOmxVdec.so
 vendor/lib/libOmxVenc.so
-vendor/lib/libplatformconfig.so
+-vendor/lib/libplatformconfig.so
 vendor/lib/libstagefrighthw.so
 vendor/lib64/libc2dcolorconvert.so
 vendor/lib64/libmm-omxcore.so
@@ -1430,7 +1430,7 @@ vendor/lib64/libOmxSwVdec.so
 vendor/lib64/libOmxSwVencMpeg4.so
 vendor/lib64/libOmxVdec.so
 vendor/lib64/libOmxVenc.so
-vendor/lib64/libplatformconfig.so
+-vendor/lib64/libplatformconfig.so
 vendor/lib64/libstagefrighthw.so
 
 # NFC
@@ -2564,7 +2564,6 @@ vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
 -lib/libantradio.so
 -lib64/libantradio.so
 -priv-app/WfdService/WfdService.apk
--priv-app/WfdService/lib/arm64/libwfdnative.so
 -product/app/QtiTelephonyService/QtiTelephonyService.apk
 -product/app/datastatusnotification/datastatusnotification.apk
 -product/app/embms/embms.apk
