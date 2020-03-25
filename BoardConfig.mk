@@ -149,6 +149,9 @@ VENDOR_SECURITY_PATCH := 2020-02-05
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
 
+# VNDK
+BOARD_VNDK_VERSION := current
+
 # WLAN
 WLAN_CHIPSET := qca_cld3
 BOARD_HAS_QCOM_WLAN := true
