@@ -390,6 +390,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg_cmcc.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg_cmcc.ini \
+    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg_export.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg_export.ini \
+    $(LOCAL_PATH)/configs/wifi/bdwlan_19651.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_19651.bin \
+    $(LOCAL_PATH)/configs/wifi/icm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/icm.conf \
+    $(LOCAL_PATH)/configs/wifi/sar-vendor-cmd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/sar-vendor-cmd.xml \
+    $(LOCAL_PATH)/configs/wifi/wifisar.xml:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wifisar.xml \
+    $(LOCAL_PATH)/configs/wifi/wigig_p2p_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wigig_p2p_supplicant.conf \
+    $(LOCAL_PATH)/configs/wifi/wigig_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wigig_supplicant.conf \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
+
 # WiFi Display
 PRODUCT_PACKAGES += \
     libdisplayconfig \
@@ -400,54 +411,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg_cmcc.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg_cmcc.ini \
-    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg_export.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg_export.ini \
-    $(LOCAL_PATH)/configs/wifi/aoa_cldb_falcon.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/aoa_cldb_falcon.bin \
-    $(LOCAL_PATH)/configs/wifi/aoa_cldb_swl14.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/aoa_cldb_swl14.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18041_id1.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18041_id1.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18081_id1.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18081_id1.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18081_id2.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18081_id2.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18081_id3.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18081_id3.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18081_id4.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18081_id4.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18097_id1.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18097_id1.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18097_id2.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18097_id2.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18181_id1.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18181_id1.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18181_id2.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18181_id2.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18181_id3.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18181_id3.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18181_id4.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18181_id4.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18381_id1.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18381_id1.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18381_id2.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18381_id2.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18381_id3.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18381_id3.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18381_id4.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18381_id4.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18383.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18383.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18385_id1.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18385_id1.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18385_id2.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18385_id2.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18385_id3.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18385_id3.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18385_id4.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18385_id4.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18397_id1.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18397_id1.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18539.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18539.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18621.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18621.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18621_mp.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18621_mp.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18633.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18633.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_18633_mp.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_18633_mp.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_19651.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_19651.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_19653.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_19653.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_19691.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_19691.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_19692.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_19692.bin \
-    $(LOCAL_PATH)/configs/wifi/bdwlan_19791.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bdwlan_19791.bin \
-    $(LOCAL_PATH)/configs/wifi/bin_version:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bin_version \
-    $(LOCAL_PATH)/configs/wifi/bin_version_realme:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bin_version_realme \
-    $(LOCAL_PATH)/configs/wifi/icm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/icm.conf \
-    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wifi/sar-vendor-cmd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/sar-vendor-cmd.xml \
-    $(LOCAL_PATH)/configs/wifi/wifisar.xml:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wifisar.xml \
-    $(LOCAL_PATH)/configs/wifi/wigig_p2p_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wigig_p2p_supplicant.conf \
-    $(LOCAL_PATH)/configs/wifi/wigig_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wigig_supplicant.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
 
 # Inherit closed-source aspects
 $(call inherit-product, vendor/realme/RMX1921/RMX1921-vendor.mk)
