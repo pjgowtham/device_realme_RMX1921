@@ -92,9 +92,7 @@ vendor/lib/libaudioparsers.so
 vendor/lib/libdrc.so
 vendor/lib/libqtigef.so
 vendor/lib/libsurround_3mic_proc.so
-vendor/lib/libtinycompress.so
 vendor/lib/soundfx/libasphere.so
-vendor/lib/soundfx/libaudiopreprocessing.so
 vendor/lib/soundfx/libdiraceffect.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
@@ -111,9 +109,7 @@ vendor/lib64/libaudioEngineerTest.so
 vendor/lib64/libaudioparsers.so
 -vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libqtigef.so
-vendor/lib64/libtinycompress.so
 vendor/lib64/soundfx/libasphere.so
-vendor/lib64/soundfx/libaudiopreprocessing.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
@@ -261,36 +257,19 @@ vendor/etc/acdbdata/QRD/sdm670-skuw-snd-card/QRD_SKUW_Speaker_cal.acdb
 vendor/etc/acdbdata/QRD/sdm670-skuw-snd-card/QRD_SKUW_workspaceFile.qwsp
 
 # Audio-Hardware
-vendor/lib/hw/audio.primary.default.so
 vendor/lib/hw/audio.primary.sdm710.so
-vendor/lib/hw/audio.r_submix.default.so
-vendor/lib/hw/audio.usb.default.so
-vendor/lib/soundfx/libqcompostprocbundle.so
-vendor/lib/soundfx/libqcomvisualizer.so
-vendor/lib/soundfx/libqcomvoiceprocessing.so
-vendor/lib/soundfx/libvolumelistener.so
-vendor/lib64/hw/audio.primary.default.so
 vendor/lib64/hw/audio.primary.sdm710.so
-vendor/lib64/hw/audio.r_submix.default.so
-vendor/lib64/hw/audio.usb.default.so
-vendor/lib64/soundfx/libqcompostprocbundle.so
-vendor/lib64/soundfx/libqcomvisualizer.so
-vendor/lib64/soundfx/libqcomvoiceprocessing.so
-vendor/lib64/soundfx/libvolumelistener.so
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
-vendor/lib/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
-vendor/lib/hw/audio.bluetooth.default.so
 vendor/lib/hw/audio.bluetooth_qti.default.so
 vendor/lib/hw/vendor.oppo.hardware.bluetooth_audio@1.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
-vendor/lib/libbluetooth_audio_session.so
 vendor/lib/libbluetooth_audio_session_qti.so
 vendor/lib/libbt-hidlclient.so
 vendor/lib/libbtnv.so
@@ -298,15 +277,12 @@ vendor/lib/vendor.oppo.hardware.bluetooth_audio@1.0.so
 vendor/lib/vendor.qti.hardware.bluetooth_audio@2.0.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib/vendor.qti.hardware.btconfigstore@1.0.so
-vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
-vendor/lib64/hw/audio.bluetooth.default.so
 vendor/lib64/hw/audio.bluetooth_qti.default.so
 vendor/lib64/hw/vendor.oppo.hardware.bluetooth_audio@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
-vendor/lib64/libbluetooth_audio_session.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbtnv.so
@@ -538,7 +514,6 @@ vendor/lib/libcapiv2vop.so
 vendor/lib/libcom.qti.chinodeutils.so
 vendor/lib/libcvface_api.so
 vendor/lib/libdepthmap.so
-vendor/lib/libgui_vendor.so
 vendor/lib/libmegface.so
 vendor/lib/libmpbase.so
 vendor/lib/libSNPE.so
@@ -658,7 +633,6 @@ vendor/lib64/libcapiv2svacnn.so
 vendor/lib64/libcapiv2vop.so
 vendor/lib64/libcom.qti.chinodeutils.so
 vendor/lib64/libcvface_api.so
-vendor/lib64/libgui_vendor.so
 vendor/lib64/libmpbase.so
 vendor/lib64/libSNPE.so
 vendor/lib64/libsnpeml.so
@@ -734,9 +708,6 @@ vendor/etc/camera/vidhance_calibration
 
 # Camera-firmware
 vendor/firmware/CAMERA_ICP.elf
-
-# Camera-motor
-vendor/etc/init/hw/init.oppo.vendor.motor.rc
 
 # Camera-sensors
 vendor/lib/libmmcamera_faceproc.so
@@ -860,33 +831,15 @@ vendor/firmware/widevine.b05
 vendor/firmware/widevine.b06
 vendor/firmware/widevine.b07
 vendor/firmware/widevine.mdt
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/libwvhidl.so
-vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 
 # Display-Hardware
-vendor/bin/hw/vendor.qti.hardware.display.allocator@1.0-service
-vendor/etc/init/vendor.qti.hardware.display.allocator@1.0-service.rc
-vendor/lib/hw/android.hardware.graphics.mapper@2.0-impl-qti-display.so
-vendor/lib/hw/gralloc.default.so
-vendor/lib/hw/gralloc.sdm710.so
-vendor/lib/hw/hwcomposer.sdm710.so
-vendor/lib/hw/memtrack.sdm710.so
-vendor/lib/libdisplaydebug.so
 vendor/lib/libdisplayqos.so
 vendor/lib/libdrm.so
-vendor/lib/libdrmutils.so
-vendor/lib/libgpu_tonemapper.so
-vendor/lib/libgralloccore.so
-vendor/lib/libgrallocutils.so
 vendor/lib/libqdMetaData.so
-vendor/lib/libqdutils.so
-vendor/lib/libqservice.so
-vendor/lib/libsdmcore.so
 vendor/lib/libsdmextension.so
-vendor/lib/libsdmutils.so
 vendor/lib/vendor.display.config@1.0.so
 vendor/lib/vendor.display.config@1.1.so
 vendor/lib/vendor.display.config@1.2.so
@@ -895,24 +848,10 @@ vendor/lib/vendor.display.config@1.4.so
 vendor/lib/vendor.display.config@1.5.so
 vendor/lib/vendor.display.config@1.6.so
 vendor/lib/vendor.display.config@1.7.so
-vendor/lib64/hw/android.hardware.graphics.mapper@2.0-impl-qti-display.so
-vendor/lib64/hw/gralloc.default.so
-vendor/lib64/hw/gralloc.sdm710.so
-vendor/lib64/hw/hwcomposer.sdm710.so
-vendor/lib64/hw/memtrack.sdm710.so
-vendor/lib64/libdisplaydebug.so
 vendor/lib64/libdisplayqos.so
 vendor/lib64/libdrm.so
-vendor/lib64/libdrmutils.so
-vendor/lib64/libgpu_tonemapper.so
-vendor/lib64/libgralloccore.so
-vendor/lib64/libgrallocutils.so
 vendor/lib64/libqdMetaData.so
-vendor/lib64/libqdutils.so
-vendor/lib64/libqservice.so
-vendor/lib64/libsdmcore.so
 vendor/lib64/libsdmextension.so
-vendor/lib64/libsdmutils.so
 vendor/lib64/vendor.display.config@1.0.so
 vendor/lib64/vendor.display.config@1.1.so
 vendor/lib64/vendor.display.config@1.2.so
@@ -1404,64 +1343,20 @@ vendor/lib64/vendor.qti.hardware.vpp@1.1.so
 vendor/lib64/vendor.qti.hardware.vpp@1.2.so
 
 # Media-Hardware
-vendor/lib/libc2dcolorconvert.so
-vendor/lib/libmm-omxcore.so
-vendor/lib/libOmxAacEnc.so
-vendor/lib/libOmxAmrEnc.so
-vendor/lib/libOmxCore.so
-vendor/lib/libOmxEvrcEnc.so
-vendor/lib/libOmxG711Enc.so
-vendor/lib/libOmxQcelp13Enc.so
 vendor/lib/libOmxSwVdec.so
 vendor/lib/libOmxSwVencMpeg4.so
-vendor/lib/libOmxVdec.so
-vendor/lib/libOmxVenc.so
 -vendor/lib/libplatformconfig.so
-vendor/lib/libstagefrighthw.so
-vendor/lib64/libc2dcolorconvert.so
-vendor/lib64/libmm-omxcore.so
-vendor/lib64/libOmxAacEnc.so
-vendor/lib64/libOmxAmrEnc.so
-vendor/lib64/libOmxCore.so
-vendor/lib64/libOmxEvrcEnc.so
-vendor/lib64/libOmxG711Enc.so
-vendor/lib64/libOmxQcelp13Enc.so
 vendor/lib64/libOmxSwVdec.so
 vendor/lib64/libOmxSwVencMpeg4.so
-vendor/lib64/libOmxVdec.so
-vendor/lib64/libOmxVenc.so
 -vendor/lib64/libplatformconfig.so
-vendor/lib64/libstagefrighthw.so
 
 # NFC
--app/NXPNfcNci/NXPNfcNci.apk
-etc/nfcee_access.xml
-framework/com.nxp.nfc.jar
-vendor/bin/hw/android.hardware.nfc@1.2-service
-vendor/bin/hw/android.hardware.secure_element@1.1-service
-vendor/etc/init/android.hardware.nfc@1.2-service.rc
-vendor/etc/init/android.hardware.secure_element@1.1-service.rc
 vendor/etc/libese-nxp.conf
-vendor/etc/libnfc-nci.conf
-vendor/etc/libnfc-nxp-pnscr.conf
-vendor/etc/nfc/com.oppo.nfc_feature.xml
-vendor/etc/sn100u_nfcon.pnscr
-vendor/lib/ese_spi_nxp.so
-vendor/lib/hal_libnfc.so
 vendor/lib/libpn553_fw.so
-vendor/lib/ls_client.so
-vendor/lib/nfc_nci.pn54x.default.so
 vendor/lib/vendor.nxp.eventprocessor@1.0.so
 vendor/lib/vendor.nxp.nxpese@1.0.so
-vendor/lib/vendor.nxp.nxpnfc@1.0.so
-vendor/lib64/ese_spi_nxp.so
-vendor/lib64/hal_libnfc.so
-vendor/lib64/ls_client.so
-vendor/lib64/nfc_nci.pn54x.default.so
 vendor/lib64/vendor.nxp.eventprocessor@1.0.so
 vendor/lib64/vendor.nxp.nxpese@1.0.so
-vendor/lib64/vendor.nxp.nxpnfc@1.0.so
-vendor/odm/etc/vintf/manifest_nfc_ese.xml
 vendor/odm/etc/vintf/manifest_secure_element_uicc.xml
 
 # Neural-networks
@@ -1481,9 +1376,6 @@ vendor/bin/hw/vendor.oppo.wifi.sniffer@1.0-service
 vendor/bin/OppoKeybox
 vendor/bin/opposysd
 vendor/etc/audio_platform_info_oppo.xml
-vendor/etc/init/hw/init.oppo.debug.diag.rc
-vendor/etc/init/hw/init.oppo.reserve.rc
-vendor/etc/init/hw/init.oppo.sensor.rc
 vendor/etc/init/init.oppo.connectivity.rc
 vendor/etc/init/vendor.oppo.engnative.engineer@1.0-service.rc
 vendor/etc/init/vendor.oppo.engnative.engsensor@1.0-service.rc
@@ -1553,7 +1445,6 @@ vendor/lib64/vendor.oppo.hardware.wifi.sniffer@1.0.so
 vendor/lib64/vendor.oppo.hardware.wifi.supplicant@1.0.so
 vendor/oppo/ck.fs
 vendor/oppo/recovery_rootcheck
-vendor/overlay/OppoGmailOverlay.apk
 vendor/overlay/OppoPhoneActivationResCommon.apk
 
 # Pasrmanager
@@ -1638,20 +1529,12 @@ vendor/lib64/vendor.display.color@1.2.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
 # Power-Hardware
-vendor/bin/hw/android.hardware.power@1.0-service
-vendor/etc/init/android.hardware.power@1.0-service.rc
-vendor/lib/hw/android.hardware.power@1.0-impl.so
-vendor/lib/hw/power.default.so
 vendor/lib/hw/power.qcom.so
-vendor/lib64/hw/android.hardware.power@1.0-impl.so
-vendor/lib64/hw/power.default.so
 vendor/lib64/hw/power.qcom.so
 
 # QMI
 etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml
-product/etc/permissions/qti_telephony_hidl_wrapper.xml
-product/etc/permissions/qti_telephony_utils.xml
 vendor/bin/irsc_util
 vendor/bin/pd-mapper
 vendor/lib/libdiag.so
@@ -2078,18 +1961,10 @@ vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Thermal
-vendor/bin/hw/android.hardware.thermal@1.0-service
 vendor/bin/thermal-engine
-vendor/etc/init/android.hardware.thermal@1.0-service.rc
 vendor/etc/thermal-engine.conf
-vendor/lib/hw/android.hardware.thermal@1.0-impl.so
 -vendor/lib/libthermalclient.so
-vendor/lib64/hw/android.hardware.thermal@1.0-impl.so
 -vendor/lib64/libthermalclient.so
-
-# Thermal-Hardware
-vendor/lib/hw/thermal.sdm710.so
-vendor/lib64/hw/thermal.sdm710.so
 
 # Time
 -vendor/app/TimeService/TimeService.apk
@@ -2123,14 +1998,6 @@ vendor/lib64/libhbtpfrmwk.so
 
 # UBWC
 vendor/lib/libstreamparser.so
-
-# Vibrator
-vendor/bin/hw/android.hardware.vibrator@1.0-service
-vendor/etc/init/android.hardware.vibrator@1.0-service.rc
-vendor/lib/hw/android.hardware.vibrator@1.0-impl.so
-vendor/lib/hw/vibrator.default.so
-vendor/lib64/hw/android.hardware.vibrator@1.0-impl.so
-vendor/lib64/hw/vibrator.default.so
 
 # Voice
 vendor/lib/vendor.qti.voiceprint@1.0.so
@@ -2226,13 +2093,11 @@ vendor/recovery-from-boot.p
 vendor/bin/adpl
 vendor/bin/athdiag
 vendor/bin/climax
-vendor/bin/cplay
 vendor/bin/diag_callback_sample
 vendor/bin/diag_dci_sample
 vendor/bin/diag_klog
 vendor/bin/diag_socket_log
 vendor/bin/diag_uart_log
-vendor/bin/dumpsys
 vendor/bin/e_loop
 vendor/bin/factory
 vendor/bin/fmconfig
@@ -2241,7 +2106,6 @@ vendor/bin/fmfactorytestserver
 vendor/bin/ftmdaemon
 vendor/bin/ftmtest
 vendor/bin/hal_proxy_daemon
-vendor/bin/hw/android.hardware.atrace@1.0-service
 vendor/bin/hw/capabilityconfigstoretest
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
 vendor/bin/hw/vendor.qti.hardware.cryptfshw@1.0-service-qti
@@ -2284,7 +2148,6 @@ vendor/etc/gpfspath_oem_config.xml
 vendor/etc/hostapd/hostapd.accept
 vendor/etc/hostapd/hostapd.deny
 vendor/etc/hostapd/hostapd_default.conf
-vendor/etc/init/android.hardware.atrace@1.0-service.rc
 vendor/etc/init/dataadpl.rc
 vendor/etc/init/dataqti.rc
 vendor/etc/init/dpmQmiMgr.rc
@@ -2296,7 +2159,6 @@ vendor/etc/init/init-qcril-data.rc
 vendor/etc/init/init.qdmastats.rc
 vendor/etc/init/init.time_daemon.rc
 vendor/etc/init/ipacm-diag.rc
-vendor/etc/init/ipacm.rc
 vendor/etc/init/ipa_fws.rc
 vendor/etc/init/netmgrd.rc
 vendor/etc/init/port-bridge.rc
@@ -2346,8 +2208,6 @@ vendor/lib/android.hardware.audio.common-util.so
 vendor/lib/android.hardware.audio.common@2.0-util.so
 vendor/lib/android.hardware.audio.common@4.0-util.so
 vendor/lib/android.hardware.audio.common@5.0-util.so
-vendor/lib/android.hardware.camera.provider@2.4-external.so
-vendor/lib/android.hardware.camera.provider@2.4-legacy.so
 vendor/lib/btaudio_offload_if.so
 vendor/lib/ese_client.so
 vendor/lib/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
@@ -2454,7 +2314,6 @@ vendor/lib/libvorbisidec.so
 vendor/lib/libvpx.so
 vendor/lib/libvslam.so
 vendor/lib/libwapi_cert.so
-vendor/lib/libwifi-hal-ctrl.so
 vendor/lib/libx264.so
 vendor/lib/qcom.camera.log.so
 vendor/lib/qtibus.so
@@ -2470,8 +2329,6 @@ vendor/lib64/android.hardware.audio.common-util.so
 vendor/lib64/android.hardware.audio.common@2.0-util.so
 vendor/lib64/android.hardware.audio.common@4.0-util.so
 vendor/lib64/android.hardware.audio.common@5.0-util.so
-vendor/lib64/android.hardware.camera.provider@2.4-external.so
-vendor/lib64/android.hardware.camera.provider@2.4-legacy.so
 vendor/lib64/btaudio_offload_if.so
 vendor/lib64/ese_client.so
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
@@ -2538,7 +2395,6 @@ vendor/lib64/libswscale.so
 vendor/lib64/libsynergy_loc_api.so
 vendor/lib64/libvndfwk_detect_jni.qti.so
 vendor/lib64/libwapi_cert.so
-vendor/lib64/libwifi-hal-ctrl.so
 vendor/lib64/libx264.so
 vendor/lib64/qcom.camera.log.so
 vendor/lib64/qtibus.so
@@ -2558,7 +2414,6 @@ vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
 
 # System properties
 
--app/NXPNfcNci/NXPNfcNci.apk
 -app/SoterService/SoterService.apk
 -framework/WfdCommon.jar
 -lib/libantradio.so
@@ -2585,7 +2440,6 @@ etc/cne/Nexus/ATT/ATT_profiles.xml
 etc/cne/Nexus/ROW/ROW_profiles.xml
 etc/cne/Nexus/VZW/VZW_profiles.xml
 etc/init/wfdservice.rc
-etc/nfcee_access.xml
 etc/perf/wlc_model.tflite
 etc/permissions/audiosphere.xml
 etc/permissions/com.qti.location.sdk.xml
@@ -2599,7 +2453,6 @@ etc/permissions/qti_permissions.xml
 etc/sysconfig/qti_whitelist.xml
 etc/wfdconfigsink.xml
 framework/audiosphere.jar
-framework/com.nxp.nfc.jar
 framework/com.qti.location.sdk.jar
 framework/izat.xt.srv.jar
 framework/tcmclient.jar
