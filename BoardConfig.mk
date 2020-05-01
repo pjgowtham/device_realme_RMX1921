@@ -20,6 +20,7 @@
 # Kernel
 # TARGET_PREBUILT_KERNEL := device/realme/RMX1851/prebuilt/Image.gz-dtb
 TARGET_KERNEL_CONFIG := sdm670-perf_defconfig
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Partitions
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
