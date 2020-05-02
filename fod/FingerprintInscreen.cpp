@@ -15,6 +15,7 @@
  */
 
 #define LOG_TAG "FingerprintInscreenService"
+//#define FOD_DEBUG
 
 #include "FingerprintInscreen.h"
 #include <hidl/HidlTransportSupport.h>
@@ -40,14 +41,16 @@
 namespace {
 
 template <typename T>
-static void set(const std::string& path, const T& value) {
+inline static void set(const std::string& path, const T& value) {
     std::ofstream file(path);
     file << value;
+#ifdef FOD_DEBUG
     LOG(INFO) << "wrote path: " << path << ", value: " << value << "\n";
+#endif
 }
 
 template <typename T>
-static T get(const std::string& path, const T& def) {
+inline static T get(const std::string& path, const T& def) {
     std::ifstream file(path);
     T result;
 
@@ -81,16 +84,10 @@ Return<int32_t> FingerprintInscreen::getSize() {
 }
 
 Return<void> FingerprintInscreen::onStartEnroll() {
-    LOG(INFO) << __func__ << " start";
-    set(HIGH_BRIGHTNESS, 1);
-    set(DIM_HBM, 1);
     return Void();
 }
 
 Return<void> FingerprintInscreen::onFinishEnroll() {
-    LOG(INFO) << __func__ << " start";
-    set(HIGH_BRIGHTNESS, 0);
-    set(DIM_HBM, 0);
     return Void();
 }
 
@@ -104,24 +101,36 @@ Return<void> FingerprintInscreen::switchHbm(bool enabled) {
 }
 
 Return<void> FingerprintInscreen::onPress() {
-    mFingerPressed = true;
+#ifdef FOD_DEBUG
     LOG(INFO) << __func__ << " start";
+#endif
+    mFingerPressed = true;
     set(DIM_HBM, 1);
     std::thread([this]() {
-        std::this_thread::sleep_for(std::chrono::milliseconds(60));
-            LOG(INFO) << "SETTING FP PRESS PATH";
+        std::this_thread::sleep_for(std::chrono::milliseconds(39));
+        if (mFingerPressed) {
+#ifdef FOD_DEBUG
+            LOG(INFO) << "Enabling sensor node";
+#endif
             set(FOD_PRESS, 1);
+        }
     }).detach();
-    LOG(INFO) << __func__ <<" exit";
+#ifdef FOD_DEBUG
+    LOG(INFO) << __func__ << " exit";
+#endif
     return Void();
 }
 
 Return<void> FingerprintInscreen::onRelease() {
+#ifdef FOD_DEBUG
     LOG(INFO) << __func__ << " start";
+#endif
     mFingerPressed = false;
     set(FOD_PRESS, 0);
     set(DIM_HBM, 0);
+#ifdef FOD_DEBUG
     LOG(INFO) << __func__ << " exit";
+#endif
     return Void();
 }
 
@@ -141,20 +150,34 @@ Return<void> FingerprintInscreen::onShowFODView() {
 }
 
 Return<void> FingerprintInscreen::onHideFODView() {
-    LOG(INFO) << __func__ << "start";
+#ifdef FOD_DEBUG
+    LOG(INFO) << __func__ << " start";
+#endif
     set(DIM_HBM, 0);
     set(FOD_PRESS, 0);
-    LOG(INFO) << __func__ << "exit";
+#ifdef FOD_DEBUG
+    LOG(INFO) << __func__ << " exit";
+#endif
     return Void();
 }
 
 Return<bool> FingerprintInscreen::handleAcquired(int32_t acquiredInfo, int32_t vendorCode) {
+#ifdef FOD_DEBUG
     LOG(ERROR) << "acquiredInfo: " << acquiredInfo << ", vendorCode: " << vendorCode << "\n";
+#else
+    (void)acquiredInfo;
+    (void)vendorCode;
+#endif
     return false;
 }
 
 Return<bool> FingerprintInscreen::handleError(int32_t error, int32_t vendorCode) {
+#ifdef FOD_DEBUG
     LOG(ERROR) << "error: " << error << ", vendorCode: " << vendorCode << "\n";
+#else
+    (void)error;
+    (void)vendorCode;
+#endif
     return false;
 }
 
@@ -163,9 +186,7 @@ Return<void> FingerprintInscreen::setLongPressEnabled(bool) {
 }
 
 Return<int32_t> FingerprintInscreen::getDimAmount(int32_t brightness) {
-    LOG(INFO) << __func__ << " start";
-    return(int32_t)((brightness > 498) ? (255 * (1.0 - pow(brightness / 2047.0 * 430.0 / 600.0, 0.455))):
-            (255 * (1.0 - pow(brightness / 1605.0, 0.455)))); 
+    return (int32_t)(255 * (1.0 - pow(brightness / 1023.0f, 0.455)));
 }
 
 Return<bool> FingerprintInscreen::shouldBoostBrightness() {
