@@ -104,7 +104,15 @@ Return<void> FingerprintInscreen::switchHbm(bool enabled) {
 }
 
 Return<void> FingerprintInscreen::onPress() {
+    mFingerPressed = true;
     LOG(INFO) << __func__ << " start";
+    set(DIM_HBM, 1);
+    std::thread([this]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(60));
+            LOG(INFO) << "SETTING FP PRESS PATH";
+            set(FOD_PRESS, 1);
+    }).detach();
+    LOG(INFO) << __func__ <<" exit";
     return Void();
 }
 
