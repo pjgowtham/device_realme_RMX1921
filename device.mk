@@ -18,7 +18,9 @@
 $(call inherit-product, device/realme/sdm710-common/sdm710.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
 
 # Fingerprint
 PRODUCT_PACKAGES += \
