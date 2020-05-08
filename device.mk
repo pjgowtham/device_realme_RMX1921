@@ -31,4 +31,5 @@ PRODUCT_COPY_FILES += \
 
 # Input
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/touchpanel.kl:system/usr/keylayout/touchpanel.kl
+    $(LOCAL_PATH)/keylayout/touchpanel.kl:system/usr/keylayout/touchpanel.kl \
+    $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
