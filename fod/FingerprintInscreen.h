@@ -50,6 +50,9 @@ public:
     Return<int32_t> getDimAmount(int32_t brightness) override;
     Return<bool> shouldBoostBrightness() override;
     Return<void> setCallback(const sp<IFingerprintInscreenCallback>& callback) override;
+    Return<int32_t> getHbmOffDelay() override;
+    Return<int32_t> getHbmOnDelay() override;
+    Return<bool> supportsAlwaysOnHBM() override;
     Return<void> switchHbm(bool enabled) override;
 
 private:

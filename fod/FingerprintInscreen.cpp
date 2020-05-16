@@ -38,6 +38,10 @@
 /* Define High brightness mode */
 #define HIGH_BRIGHTNESS "/sys/kernel/oppo_display/hbm"
 
+/* Define HBM Delay */
+#define HBM_OFF_DELAY 50
+#define HBM_ON_DELAY 320
+
 namespace {
 
 template <typename T>
@@ -89,6 +93,18 @@ Return<void> FingerprintInscreen::onStartEnroll() {
 
 Return<void> FingerprintInscreen::onFinishEnroll() {
     return Void();
+}
+
+Return<int32_t> FingerprintInscreen::getHbmOffDelay() {
+    return HBM_OFF_DELAY;
+}
+
+Return<int32_t> FingerprintInscreen::getHbmOnDelay() {
+    return HBM_ON_DELAY;
+}
+
+Return<bool> FingerprintInscreen::supportsAlwaysOnHBM() {
+    return true;
 }
 
 Return<void> FingerprintInscreen::switchHbm(bool enabled) {
