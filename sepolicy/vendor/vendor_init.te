@@ -10,3 +10,13 @@ allow vendor_init persist_file:lnk_file read;
 
 # Allow vendor_init to write to sysfs_ssr_toggle
 allow vendor_init sysfs_ssr_toggle:file w_file_perms;
+
+allow vendor_init default_prop:property_service set;
+allow vendor_init audio_prop:property_service set;
+allow vendor_init reschedule_service_prop:property_service set;
+allow vendor_init vendor_video_prop:property_service set;
+allow vendor_init freq_prop:property_service set;
+allow vendor_init block_device:lnk_file setattr;
+allow vendor_init default_prop:file read;
+allow vendor_init oppo_debug_prop:file read;
+allow vendor_init persist_debug_prop:file read;
