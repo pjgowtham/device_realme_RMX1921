@@ -346,6 +346,7 @@ on post-fs-data
     chmod 2770 /data/vendor/perfd
     rm /data/vendor/perfd/default_values
 
+    mkdir /data/vendor/nfc 0770 nfc nfc
     mkdir /data/vendor/secure_element 0777 system system
 
     #Create IOP  deamon related dirs
@@ -524,8 +525,15 @@ service qcom-c_main-sh /vendor/bin/init.class_main.sh
     oneshot
 
 on property:vold.decrypt=trigger_restart_framework
+    start bspFwUpdate
     start qcom-c_main-sh
     start wcnss-service
+
+on property:ro.crypto.state=unencrypted
+    start bspFwUpdate
+
+on property:ro.crypto.state=unsupported
+    start bspFwUpdate
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
@@ -1008,10 +1016,10 @@ on property:vendor.rild.libpath=*
 on property:ro.vendor.radio.noril=*
     setprop ro.radio.noril ${ro.vendor.radio.noril}
 
-service seemp_healthd /vendor/bin/seemp_healthd
-    class late_start
-    user system
-    group system
+#service seemp_healthd /vendor/bin/seemp_healthd
+#    class late_start
+#    user system
+#    group system
 
 service vendor.power_off_alarm /vendor/bin/power_off_alarm
     class core
@@ -1033,12 +1041,14 @@ service vendor.hbtp /vendor/bin/hbtp_daemon
      capabilities SYS_NICE
      disabled
 
-service chre /vendor/bin/chre
-    class late_start
-    user system
-    group system
-    socket chre seqpacket 0660 root system
-    shutdown critical
+#service chre /vendor/bin/chre
+#    class late_start
+#    user system
+#    group system
+#    socket chre seqpacket 0660 root system
+#    shutdown critical
+on property:vendor.chre.enabled=0
+   stop chre
 
 on property:vendor.chre.enabled=0
    stop chre
@@ -1062,7 +1072,7 @@ service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     class hal
     user audioserver
     # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
-    group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct oem_2901 wakelock
+    group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct oem_2901 wakelock readproc
     capabilities BLOCK_SUSPEND SYS_NICE
     ioprio rt 4
     writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
