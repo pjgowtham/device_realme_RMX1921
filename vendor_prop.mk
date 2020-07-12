@@ -101,8 +101,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 # Display
 PRODUCT_PROPERTY_OVERRIDES +=  \
     vendor.display.enable_default_color_mode=1 \
-    ro.vendor.display.cabl=2 \
-    ro.sf.lcd_density=440
+    ro.vendor.display.cabl=2
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES +=  \
