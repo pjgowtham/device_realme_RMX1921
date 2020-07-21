@@ -1,28 +1,43 @@
 # Audio
 /mnt/vendor/persist/audio(/.*)?                                                u:object_r:persist_audio_file:s0
 /proc/asound/card0/codecs(/.*)?                                                u:object_r:proc_audio_file:s0
-
-# Goodix Fingerprint device
-/dev/goodix_fp                                                                                           u:object_r:goodix_device:s0
+/dev/socket/audio_hw_socket                   u:object_r:audio_socket:s0
 
 # Biometrics
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.RMX1921    u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oppo\.hardware\.biometrics\.fingerprint@2\.1-service              u:object_r:hal_fingerprint_default_exec:s0       
 
 # FOD Hal
+/dev/goodix_fp                                u:object_r:fingerprint_device:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.biometrics\.fingerprint\.inscreen@1.0-service\.RMX1921    u:object_r:hal_lineage_fod_default_exec:s0
+
+# Data files
+/data/vendor/goodix(/.*)?                     u:object_r:fingerprint_data_file:s0
+/data/vendor/gps(/.*)?                        u:object_r:gps_data_file:s0
+/data/vendor/mac_addr(/.*)?                   u:object_r:wifi_vendor_data_file:s0
+/data/vendor/thermal(/.*)?                    u:object_r:thermal_data_file:s0
+
+# Executables
+/vendor/bin/glgps                             u:object_r:glgps_exec:s0
+/vendor/bin/ignss_2_0                         u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/lhd                               u:object_r:lhd_exec:s0
+/vendor/bin/nv_mac                            u:object_r:wcnss_service_exec:s0
+
+# GPS devices
+/dev/bbd_control                              u:object_r:gps_device:s0
+/dev/bbd_patch                                u:object_r:gps_device:s0
+/dev/bbd_sensor                               u:object_r:gps_device:s0
+/dev/ttyBCM                                   u:object_r:gps_device:s0
+/dev/socket/gps                               u:object_r:gps_socket:s0
+
+# GPS nodes
+/sys/devices/platform/soc/[0-9]+\.spi/spi_master/spi[0-9]+/spi[0-9]+\.0/nstandby   u:object_r:sysfs_gps:s0
 
 # Light Hal
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.RMX1921                      u:object_r:hal_light_default_exec:s0
 
 # Oppo HIDL hals
 /(vendor|system/vendor)/bin/hw/vendor\.oppo\.hardware\.camera\.oppoAlgoProcessService@1\.0-service u:object_r:hal_camera_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.oppo\.hardware\.mmdisplayfeature@1\.0-service               u:object_r:oppo_display_default_exec:s0
-
-# Rootfs files
-/bt_firmware(/.*)?                            u:object_r:bt_firmware_file:s0
-/firmware(/.*)?                               u:object_r:firmware_file:s0
-/persist(/.*)?                                u:object_r:persist_file:s0
 
 # Neural Networks Hal
 /(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-qti                                 u:object_r:hal_neuralnetworks_default_exec:s0
@@ -38,9 +53,6 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/oppostanvbk                                                u:object_r:modem_efs_partition_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/opporeserve[0-9]                                                u:object_r:modem_efs_partition_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/oppo_sec                                                u:object_r:modem_efs_partition_device:s0
-
-# mdmreason device
-/dev/mdmreason             u:object_r:mdmreason_device:s0
 
 # sysfs uio
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,oembackup_sharedmem/uio/uio[0-9]+(/.*)?         u:object_r:sysfs_uio_file:s0
