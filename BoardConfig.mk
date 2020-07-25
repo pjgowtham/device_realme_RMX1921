@@ -103,6 +103,9 @@ DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 TARGET_LMKD_STATS_LOG := true
 
 # NFC
+TARGET_USES_NQ_NFC := true
+BOARD_NFC_CHIPSET := pn544
+
 ODM_MANIFEST_SKUS += \
     nfc_ese \
     secure_element_uicc
