@@ -32,7 +32,7 @@
         <transport>hwbinder</transport>
     </hal>
     <hal override="true">
-        <name>vendor.nxp.nxpnfc</name>
+        <name>vendor.nxp.hardware.nfc</name>
         <transport>hwbinder</transport>
     </hal>
 </manifest>
