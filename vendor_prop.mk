@@ -17,6 +17,8 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.vendor.audio.sdk.fluencetype=none \
     ro.vendor.audio.sdk.ssr=false \
     vendor.audio.apptype.multirec.enabled=false \
+    vendor.audio.dolby.ds2.enabled=false \
+    vendor.audio.dolby.ds2.hardbypass=false \
     vendor.audio.feature.a2dp_offload.enable=true \
     vendor.audio.feature.afe_proxy.enable=true \
     vendor.audio.feature.anc_headset.enable=true \
@@ -77,9 +79,10 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     vendor.audio.volume.headset.gain.depcal=true \
     vendor.audio_hal.period_size=192
 
+
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES +=  \
-    persist.bluetooth.a2dp_offload.disabled=true \
+    persist.bluetooth.a2dp_offload.disabled=false \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
     persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
     persist.vendor.bt.aac_frm_ctl.enabled=true \
@@ -97,20 +100,12 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES +=  \
    debug.stagefright.omx_default_rank.sw-audio=1 \
    debug.stagefright.omx_default_rank=0
-
-# Dalvik
-PRODUCT_PROPERTY_OVERRIDES += \
-   dalvik.vm.heapstartsize=16m \
-   dalvik.vm.heapgrowthlimit=384m \
-   dalvik.vm.heapsize=512m \
-   dalvik.vm.heaptargetutilization=0.75 \
-   dalvik.vm.heapminfree=4m \
-   dalvik.vm.heapmaxfree=16m
    
 # Display
 PRODUCT_PROPERTY_OVERRIDES +=  \
     vendor.display.enable_default_color_mode=1 \
-    ro.vendor.display.cabl=2
+    ro.vendor.display.cabl=2 \
+    ro.sf.lcd_density=420
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES +=  \

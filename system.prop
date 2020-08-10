@@ -3,8 +3,8 @@ audio.deep_buffer.media=true
 audio.offload.min.duration.secs=30
 audio.offload.video=true
 ro.af.client_heap_size_kbyte=7168
-ro.config.media_vol_steps=25
-ro.config.vc_call_vol_steps=11
+audio.sys.noisy.broadcast.delay=600
+audio.sys.offload.pstimeout.secs=3
 
 # Bluetooth
 vendor.bluetooth.soc=cherokee
@@ -24,6 +24,19 @@ persist.vendor.cne.feature=1
 persist.data.df.dev_name=rmnet_usb0
 persist.vendor.data.mode=concurrent
 ro.vendor.use_data_netmgrd=true
+
+# Display - oppo
+persist.sys.enable.rc=1
+ro.display.rc.size=108,108,111,111
+ro.lcd.backlight.samsung_tenbit=10,517,103,303,355,457,563,676,805,883,1023
+ro.lcd.backlight.config_dsjm=11,958,13,334,517,794,1055,1325,1617,1770,1989,2047
+ro.vendor.display.backlightapp=1
+ro.display.underscreenfingerprint=1
+ro.display.underscreen.lightsensor.support=1
+ro.lcd.display.screen.underlightsensor.region=624,28,672,76
+ro.display.underscreen.lightsensor.screenshot.period=50
+persist.debug.wfd.enable=1
+ro.oppo.screen.heteromorphism=444,0:636,76
 
 # Display post-processing
 ro.qualcomm.cabl=0
@@ -79,3 +92,11 @@ rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.com.android.dataroaming=true
 ro.telephony.default_network=22,22
 telephony.lteOnCdmaDevice=1
+
+# Sensors
+persist.sys.oppo.fusionlight=true
+persist.sys.oppo.proximity=true
+
+# Thermal
+persist.sys.enable.oscar=0
+persist.sys.oscar.dc=1
