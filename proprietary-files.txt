@@ -106,7 +106,6 @@ vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libshoebox.so
-vendor/lib/soundfx/libdiraceffect.so
 
 # Audio - Firmware
 vendor/firmware/tfa98xx_19651.cnt
@@ -114,6 +113,8 @@ vendor/firmware/dbmd4_va_fw.bin
 vendor/firmware/voice_amodel.bin
 
 # Bluetooth
+lib64/libbtconfigstore.so
+lib/libbtconfigstore.so
 vendor/lib64/hw/audio.bluetooth_qti.default.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
@@ -121,6 +122,7 @@ vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib64/btaudio_offload_if.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
+vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so
 vendor/lib/hw/audio.bluetooth_qti.default.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
@@ -128,6 +130,7 @@ vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib/btaudio_offload_if.so
 vendor/lib/libbluetooth_audio_session_qti.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
+vendor/lib/vendor.qti.hardware.btconfigstore@1.0.so
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
@@ -211,6 +214,8 @@ vendor/lib/libcapiv2vop.so
 vendor/lib/libcom.qti.chinodeutils.so
 vendor/lib/libcvface_api.so
 vendor/lib/libdepthmap.so
+vendor/lib/libgui_vendor.so
+vendor/lib/libmegface.so
 vendor/lib/libmpbase.so
 vendor/lib/libSNPE.so
 vendor/lib/libSNPE_G.so
@@ -321,6 +326,7 @@ vendor/lib64/libcapiv2svacnn.so
 vendor/lib64/libcapiv2vop.so
 vendor/lib64/libcom.qti.chinodeutils.so
 vendor/lib64/libcvface_api.so
+vendor/lib64/libgui_vendor.so
 vendor/lib64/libmpbase.so
 vendor/lib64/libSNPE.so
 vendor/lib64/libsnpeml.so
@@ -345,6 +351,7 @@ vendor/lib64/libVDSuperPhotoAPI.so
 vendor/lib64/libvidhance.so
 vendor/etc/license.lic
 vendor/lib64/libbokehclient.so
+vendor/lib64/libdisplayconfig.so
 vendor/lib64/libloadalgo_stub.so
 vendor/lib64/libnativehelpers.so
 vendor/lib64/libocam_common.so
@@ -381,11 +388,6 @@ vendor/lib64/libarcsoft_portrait_super_night_raw.so
 vendor/lib64/libarcsoft_relighting_pro_image.so
 vendor/lib64/libarcsoft_smart_denoise.so
 vendor/lib64/libarcsoft_super_night_raw.so
-
-# Camera - Extracted from euclid
-vendor/etc/camera/oppo_camera_config.xml|eb5577b427191549662162c6d634b521b78bd9db
-vendor/etc/camera/engineer_camera_config|88e9081d8f73d4d245e9d2d80902536495c49ddc
-vendor/etc/camera/stereoParams.bin|e202cd15fcfdbc8352471d12c0e448ae5849e278
 
 # Camera-configs
 vendor/etc/camera/arc_golden.bin
@@ -962,6 +964,13 @@ vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqtikeymaster4.so
 
+# Keystore
+vendor/lib/libspcom.so
+vendor/lib64/libkeystore-engine-wifi-hidl.so
+vendor/lib64/libkeystore-wifi-hidl.so
+vendor/lib64/libspcom.so
+vendor/lib64/vendor.qti.hardware.wifi.keystore@1.0.so
+
 # Latency
 product/framework/vendor.qti.hardware.data.latency-V1.0-java.jar
 product/framework/vendor.qti.latency-V2.0-java.jar
@@ -1066,15 +1075,9 @@ vendor/lib/libOmxSwVdec.so
 vendor/lib/libOmxSwVencMpeg4.so
 vendor/lib/libOmxWmaDec.so
 
-# NFC - esepowermanager
+# NFC
 vendor/odm/etc/vintf/manifest_nfc_ese.xml
-vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc
 vendor/odm/etc/vintf/manifest_secure_element_uicc.xml
-vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
-vendor/lib/vendor.qti.esepowermanager@1.0.so
-vendor/lib64/vendor.qti.esepowermanager@1.0.so
-vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so
-vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so
 
 # Neural networks
 vendor/bin/hw/android.hardware.neuralnetworks@1.2-service-qti
@@ -1149,8 +1152,6 @@ vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
-vendor/lib/libspcom.so
-vendor/lib64/libspcom.so
 
 # Power-off alarm
 -product/app/PowerOffAlarm/PowerOffAlarm.apk
@@ -1161,7 +1162,7 @@ vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # Power-off charging daemon
-bin/chargeonlymode|1cd4c3850c668cc34ac2b7d8daa804bf6561b2bd
+bin/charger
 
 # QMI
 etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
