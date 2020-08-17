@@ -26,13 +26,15 @@ $(call inherit-product, vendor/omni/config/common.mk)
 PRODUCT_DEVICE := realme_sdm710
 PRODUCT_NAME := omni_realme_sdm710
 PRODUCT_BRAND := Realme
-PRODUCT_MODEL := realme_sdm710
 PRODUCT_MANUFACTURER := Realme
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=realme_sdm710 \
     BUILD_PRODUCT=realme_sdm710 \
     TARGET_DEVICE=realme_sdm710
+
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
+    ro.product.device
 
 # HACK: Set vendor patch level
 PRODUCT_PROPERTY_OVERRIDES += \
