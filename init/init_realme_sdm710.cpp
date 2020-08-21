@@ -36,7 +36,8 @@ void vendor_load_properties() {
 	getline(infile, prjName);
 	
 	if (prjName == "19651") {
-            model = "RMX1921";		
+            model = "RMX1921";
+            property_set("ro.power_profile.override", "power_profile_XT");
                if (oppo_sku == "nfc_ese" || oppo_sku == "RMX1921EU") {	
                    device = "RMX1921EU";
                } else {
@@ -46,6 +47,7 @@ void vendor_load_properties() {
      
 	if (prjName == "18041") {
              model = "RMX1901";
+             property_set("ro.power_profile.override", "power_profile_X");
 	        std::ifstream infile(/proc/partitions);
 	        string partitions_size;
 	        getline(infile, partitions_size);
@@ -62,10 +64,12 @@ void vendor_load_properties() {
 	if (prjName == "18621") {
 	     device = "RMX1851";
              model = "RMX1851";
+             property_set("ro.power_profile.override", "power_profile_3P");
                 }
 
 	if (prjName == "19691") {
              model = "RMX1971";
+             property_set("ro.power_profile.override", "power_profile_5P");
 
 	        std::ifstream infile(/proc/partitions);
 	        string partitions_size;
